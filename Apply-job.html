@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Apply for Jobs form</title>
+    <style>
+        body{
+            background-color:blue;
+            font-size: 20px;
+            font-family:cursive;
+        }
+        h1{
+            color:white;
+            font-family:cursive;
+        }
+        fieldset{
+            background-color:skyblue;
+            border-style:ridge;
+            border-color:darkblue;
+            border-radius:50px;
+            width: 400px;
+            padding-left:4cm;
+        }
+        select{
+            border-radius:8px;
+        }
+        input{
+            border-radius: 10px;
+            text-align: center;
+        }
+        textarea{
+            border-radius:10px;
+        }
+        #submit{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apply for Jobs</h1>
+    <div>
+        <fieldset>
+            <form>
+                <label for="firstName">First name:</label>
+                <input id="firstName" type="text" placeholder="Enter First Name" pattern="^[a-z A-Z]+$" required>
+                <br><br>
+                <label for="lastName">Last name:</label>
+                <input id="lastName" type="text" placeholder="Enter Last Name" pattern="^[a-z A-Z]+$" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input id="email" type="email" placeholder="Enter Email" pattern="^([a-z A-Z 0-9]+)@([a-z A-Z]+)\.([A-Z a-z]+)$" required>
+                <br><br>
+                <label for="mobile">Phone:</label>
+                <input id="mobile" type="text" placeholder="Enter Mobile Number" pattern="^[987][0-9]{9}$" required>
+                <br><br>
+                <label for="Address">Address:</label>
+                <input id="Address" type="text" placeholder="Enter your Address" required>
+                <br><br>
+                <label for="city">City:</label>
+                <input id="city" type="text" placeholder="Enter your city" pattern="^[a-z A-Z 0-9]+$" required>
+                <br><br>
+                <label for="state">State:</label>
+                <input id="state" type="text" placeholder="Enter your state" pattern="^[a-z A-z]+$" required>
+                <br><br>
+                <label for="pin">Zip:</label>
+                <input id="pin" type="text" placeholder="Enter zip code" pattern="[0-9]{6}" required>
+                <br><br>
+                <label for="county">Country:</label>
+                <select id="country">
+                    <option>India</option>
+                    <option>Japan</option>
+                    <option>Russia</option>
+                </select>
+                <br><br>
+                <label for="education">Education level:</label>
+                <select id="education">
+                    <option>Secondary</option>
+                    <option>Higher Secondary</option>
+                    <option>Graduate</option>
+                </select>
+                <br><br>
+                <label for="type">Education type:</label>
+                <select id="type">
+                    <option>Regular</option>
+                    <option>Irregular</option>
+                    <option>Private</option>
+                </select>
+                <br><br>
+                <label for="resume">Resume:</label>
+                <input id="resume" type="file" required>
+                <br><br>
+
+                <label for="coverLetter">Cover Letter:</label>
+                <textarea id="coverLetter"></textarea>
+                <br><br>
+                <label for="employee">Are you employed?:</label>
+                <input id="employee" type="checkbox" value="" onclick="showdiv()">
+                <br><br>
+                <div id="field1" style="display: none;">
+                    <label for="currentEmployer">Current Employer:</label>
+                    <input id="currentEmployer" type="text">
+                    <br><br>
+                    <label for="experience">Years of experience:</label>
+                    <input id="experience" type="number">
+                    <br><br>
+                </div>
+
+                <label for="job">Jobs you want to apply:</label>
+                <select id="job" multiple>
+                    <option value="">1.Analyst</option>
+                    <option value="">2.Programmer</option>
+                    <option value="">3.Manager</option>
+                    <option value="">4.Software</option>
+                </select>
+        
+                <br><br>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        function showdiv(){
+            let checking = document.getElementById("employee").checked;
+            document.getElementById("field1").style.display = checking ? "block" : "none";
+            
+        }
+    </script>
+</body>
+</html>
